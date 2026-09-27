@@ -2,13 +2,12 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-# NOTE: ~/.oh-my-zsh was absent on collection (2026-09-23); keep commented until reinstalled.
-# export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="robbyrussell"
-# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-# if [[ -s "$ZSH/oh-my-zsh.sh" ]]; then
-#   source "$ZSH/oh-my-zsh.sh"
-# fi
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+if [[ -s "$ZSH/oh-my-zsh.sh" ]]; then
+  source "$ZSH/oh-my-zsh.sh"
+fi
 
 # User configuration
 
