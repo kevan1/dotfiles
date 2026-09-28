@@ -33,9 +33,9 @@ if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
-# configuración de zoxide (z / zi)
+# configuración de zoxide (cd inteligente / cdi)
 if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init zsh --cmd cd)"
 fi
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
