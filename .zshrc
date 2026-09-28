@@ -16,12 +16,21 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Optional tools (install via brew if you want them; playbook may not install starship)
+# Prompt, navegación y listados (instalados por el playbook)
+# starship: prompt (estilo por defecto, sin starship.toml)
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+# zoxide: `cd` aprende tus carpetas frecuentes (`cd proy` salta a ~/Developer/proyecto); `cdi` para elegir
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
+# eza: reemplazo de ls con íconos, colores y estado de git
+if command -v eza >/dev/null 2>&1; then
+  alias ls='eza --group-directories-first --icons=auto'
+  alias ll='eza -lh --group-directories-first --icons=auto --git'
+  alias la='eza -lah --group-directories-first --icons=auto --git'
+  alias lt='eza --tree --level=2 --group-directories-first --icons=auto --git-ignore'
 fi
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
