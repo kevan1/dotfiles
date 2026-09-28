@@ -1,9 +1,6 @@
 # Ghostty
 
-Encontrado en:
-`~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`
+Config restaurada del backup del SSD (`kevan-mac-backup/2026-05-28`). Lo único personalizado era el keybind de Shift+Enter; todo lo demás usa los valores por defecto.
 
-No había `~/.config/ghostty/config`.
-
-El archivo existía pero estaba **vacío (0 bytes)** al momento de la recolección (2026-09-23).
-Tras personalizar Ghostty, volvé a copiar el config aquí.
+En la Mac se enlaza así:
+`~/Library/Application Support/com.mitchellh.ghostty/config.ghostty` apunta a este `config.ghostty`.
