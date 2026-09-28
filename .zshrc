@@ -16,21 +16,26 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Prompt, navegación y listados (instalados por el playbook)
-# starship: prompt (estilo por defecto, sin starship.toml)
+# configuración de eza y alias
+if command -v eza >/dev/null 2>&1; then
+  export EZA_ICONS_AUTO=always
+  alias ls='eza --icons'
+  alias ll='eza -l --icons --git'
+  alias la='eza -la --icons --git'
+  alias lt='eza --tree --level=2 --icons'
+  alias l='eza -l --icons'
+  alias lg='eza -l --git --icons'
+  alias ldot='eza -ld .* --icons'
+fi
+
+# configuración de starship
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
-# zoxide: `cd` aprende tus carpetas frecuentes (`cd proy` salta a ~/Developer/proyecto); `cdi` para elegir
+
+# configuración de zoxide (z / zi)
 if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh --cmd cd)"
-fi
-# eza: reemplazo de ls con íconos, colores y estado de git
-if command -v eza >/dev/null 2>&1; then
-  alias ls='eza --group-directories-first --icons=auto'
-  alias ll='eza -lh --group-directories-first --icons=auto --git'
-  alias la='eza -lah --group-directories-first --icons=auto --git'
-  alias lt='eza --tree --level=2 --group-directories-first --icons=auto --git-ignore'
+  eval "$(zoxide init zsh)"
 fi
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
